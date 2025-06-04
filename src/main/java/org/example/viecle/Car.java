@@ -1,9 +1,10 @@
 package org.example.viecle;
 
 import org.example.engine.CabEngine;
+import org.example.engine.Engine;
 
 public class Car {
-    private CabEngine engine = new CabEngine();
+    private Engine engine = new CabEngine();
     private boolean isKeyOn = false;
 
     /**
@@ -19,9 +20,7 @@ public class Car {
      */
     public void startEngine() {
         if (this.isKeyOn) {
-            this.engine.chokeOn();
-            this.engine.moveStarterCellMotor();
-            this.engine.chokeOff();
+            this.engine.start();
             System.out.println("エンジン始動完了");
         } else {
             System.out.println("Keyが入ってません");
